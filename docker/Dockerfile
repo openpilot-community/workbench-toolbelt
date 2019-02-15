@@ -109,8 +109,9 @@ RUN mkdir -p /data/params
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 RUN mkdir -p /data/openpilot/selfdrive/test/out
 RUN make -C /data/openpilot/selfdrive/controls/lib/longitudinal_mpc clean
 RUN make -C /data/openpilot/selfdrive/controls/lib/lateral_mpc clean
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD tail -f /dev/null

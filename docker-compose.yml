@@ -1,12 +1,74 @@
 version: '3'
- 
+
 services:
-    server:
-        build:
-            context: ./docker
-            args:
-                SSH_MASTER_USER: ${SSH_MASTER_USER}
-                SSH_MASTER_PASS: ${SSH_MASTER_PASS}
-        hostname: server
-        ports:
-            - "8022:8022"
+  server:
+    build:
+      context: ./docker
+      args:
+        SSH_MASTER_USER: ${SSH_MASTER_USER}
+        SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+    hostname: eon
+    ports:
+      - "8002:8002" #frame
+      - "8003:8003" #sensorEvents (accel, gyro, and compass)
+      - "8004:8004" #gpsNMEA (GPS data, also global timestamp)
+      - "8005:8005" #thermal (CPU+MEM+GPU+BAT temps)
+      - "8006:8006" #List(CanData), list of can messages
+      - "8007:8007" #live100
+      - "8008:8008" #liveEvent
+      - "8009:8009" #model
+      - "8010:8010" #features
+      - "8011:8011" #health
+      - "8012:8012" #live20
+      - "8014:8014" #liveUI
+      - "8015:8015" #encodeIdx
+      - "8016:8016" #liveTracks
+      - "8017:8017" #sendcan
+      - "8018:8018" #logMessage
+      - "8019:8019" #liveCalibration
+      - "8020:8020" #androidLog
+      - "8021:8021" #carState
+      - "8022:8022" #sshd
+      - "8023:8023" #carControl
+      - "8024:8024" #plan
+      - "8025:8025" #liveLocation
+      - "8026:8026" #gpsLocation
+      - "8027:8027" #ethernetData
+      - "8028:8028" #navUpdate
+      - "8029:8029" #qcomGnss
+      - "8030:8030" #lidarPts
+      - "8031:8031" #procLog
+      - "8032:8032" #gpsLocationExternal
+      - "8033:8033" #ubloxGnss
+      - "8034:8034" #clocks
+      - "8035:8035" #liveMpc
+      - "8036:8036" #liveLongitudinalMpc
+      - "8037:8037" #plusFrame
+      - "8038:8038" #navStatus
+      - "8039:8039" #gpsLocationTrimble
+      - "8041:8041" #trimbleGnss
+      - "8042:8042" #ubloxRaw
+      - "8043:8043" #gpsPlannerPoints
+      - "8044:8044" #gpsPlannerPlan
+      - "8046:8046" #applanixRaw
+      - "8047:8047" #orbLocation
+      - "8048:8048" #trafficEvents
+      - "8049:8049" #liveLocationTiming
+      - "8050:8050" #orbslamCorrection
+      - "8051:8051" #liveLocationCorrected
+      - "8052:8052" #orbObservation
+      - "8053:8053" #applanixLocation
+      - "8054:8054" #liveLocationKalman
+      - "8055:8055" #uiNavigationEvent
+      - "8057:8057" #orbOdometry
+      - "8058:8058" #orbFeatures
+      - "8059:8059" #orbKeyFrame
+      - "8060:8060" #uiLayoutState
+      - "8061:8061" #frontEncodeIdx
+      - "8062:8062" #orbFeaturesSummary
+      - "8063:8063" #driverMonitoring
+      - "8064:8064" #liveParameters
+      - "8065:8065" #liveMapData
+      - "8040:8040" #testModel
+      - "8045:8045" #testLiveLocation
+      - "8056:8056" #testJoystick
