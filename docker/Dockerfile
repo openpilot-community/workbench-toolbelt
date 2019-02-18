@@ -6,8 +6,6 @@ ENV PYTHONUNBUFFERED 1
 # Although we don't normally need openssh-server on a docker container,
 # one of the goals of this project is to mimic an "eon-like" experience 
 # as close as possible.
-ARG SSH_MASTER_USER
-ARG SSH_MASTER_PASS
 
 # SYSTEM DEPENDENCIES
 RUN apt-get update && apt-get install -y --no-install-recommends \

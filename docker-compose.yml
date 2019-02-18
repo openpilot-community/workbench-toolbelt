@@ -5,8 +5,8 @@ services:
     build:
       context: ./docker
       args:
-        SSH_MASTER_USER: ${SSH_MASTER_USER}
-        SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+        SSH_MASTER_USER: root
+        SSH_MASTER_PASS: nothingNewHere
     hostname: eon
     ports:
       - "8002:8002" #frame
