@@ -1,0 +1,6 @@
+/data/params/d/*
+!/data/params/d/.gitkeep
+/data/media/0/realdata/*.bz2
+/data/media/0/realdata/*.hevc
+/data/media/0/realdata/*.bz2
+/data/media/0/realdata/*.hevc

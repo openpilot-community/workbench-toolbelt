@@ -8,6 +8,12 @@ services:
         SSH_MASTER_USER: root
         SSH_MASTER_PASS: nothingNewHere
     hostname: eon
+    volumes:
+      # Just specify a path and let the Engine create a volume
+      # - ./data/openpilot:/data/openpilot
+      # - ./data/openpilot_tools:/data/openpilot_tools
+      - ./data/params/d:/data/params/d
+      - ./data/media/0/realdata:/data/media/0/realdata
     ports:
       - "8002:8002" #frame
       - "8003:8003" #sensorEvents (accel, gyro, and compass)
