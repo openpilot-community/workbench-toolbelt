@@ -55,7 +55,7 @@ RUN pip install wheel
 
 # INSTALL OPENPILOT
 RUN pip install numpy==1.11.2 scipy==0.18.1 matplotlib==2.1.2
-RUN git clone https://github.com/commaai/openpilot.git /data/openpilot
+RUN git clone --depth 1 --single-branch --branch devel https://github.com/commaai/openpilot.git /data/openpilot
 
 # This seems silly but maybe it's required... was mimicing the 
 # Dockerfile.openpilot locations minus the /tmp/
@@ -98,7 +98,7 @@ COPY capnp_install.sh /usr/local/bin/capnp_install.sh
 RUN chmod +x /usr/local/bin/capnp_install.sh
 RUN /usr/local/bin/capnp_install.sh
 
-RUN git clone https://github.com/commaai/openpilot-tools.git /data/openpilot/openpilot_tools
+RUN git clone --depth 1 --single-branch --branch master https://github.com/Gernby/openpilot-tools.git /data/openpilot/openpilot_tools
 
 RUN pip install -r /data/openpilot/openpilot_tools/requirements.txt
 
